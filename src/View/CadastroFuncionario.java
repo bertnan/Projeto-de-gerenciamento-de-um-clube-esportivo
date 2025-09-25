@@ -36,15 +36,16 @@ class CadastroFuncionario extends JDialog {
         add(salvarBtn);
 
         salvarBtn.addActionListener(e -> {
-            Funcionario f = new Funcionario(
+            Funcionario funcionario = new Funcionario(
                 nomeField.getText(),
                 cpfField.getText(),
                 dataField.getText(),
                 cargoField.getText(),
                 Double.parseDouble(salarioField.getText())
             );
+            CadastroPessoas.adicionar(funcionario);
             JOptionPane.showMessageDialog(this,
-                "Funcionário cadastrado: " + f.getNome());
+                "Funcionário cadastrado: " + funcionario.getNome());
             dispose();
         });
 
