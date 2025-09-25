@@ -9,7 +9,7 @@ class CadastroPresidente extends JDialog {
 
     public CadastroPresidente(JFrame parent) {
         super(parent, "Cadastro de Presidente", true);
-        setSize(300, 250);
+        setSize(500, 400);
         setLayout(new java.awt.GridLayout(6,2));
 
         add(new JLabel("Nome:"));

@@ -4,7 +4,7 @@ import javax.swing.*;
 public class InterfaceGrafica extends JFrame {
     public InterfaceGrafica() {
         setTitle("Sistema de Gerenciamento do Clube");
-        setSize(600, 400);
+        setSize(900,600);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         JMenuBar menuBar = new JMenuBar();
@@ -18,10 +18,14 @@ public class InterfaceGrafica extends JFrame {
         JMenuItem cadastrarFuncionario = new JMenuItem("Cadastrar Funcionário");
         JMenuItem cadastrarSocio = new JMenuItem("Cadastrar Sócio");
         JMenuItem cadastrarPresidente = new JMenuItem("Cadastrar Presidente");
+        JMenuItem cadastrarEsporteTerrestre = new JMenuItem("Cadastrar Esporte Terrestre");
+        JMenuItem cadastrarEsporteAquatico = new JMenuItem("Cadastrar Esporte Aquático");
 
         menuCadastro.add(cadastrarFuncionario);
         menuCadastro.add(cadastrarSocio);
         menuCadastro.add(cadastrarPresidente);
+        menuCadastro.add(cadastrarEsporteTerrestre);
+        menuCadastro.add(cadastrarEsporteAquatico);
 
         // Departamentos
         JMenuItem deptTerrestre = new JMenuItem("Esportes Terrestres");
@@ -53,6 +57,16 @@ public class InterfaceGrafica extends JFrame {
         cadastrarFuncionario.addActionListener(e -> {
             new CadastroFuncionario(this);
         });
+
+        cadastrarEsporteTerrestre.addActionListener(e -> {
+            new CadastroDeptoTerrestre(this);
+        });
+
+        cadastrarEsporteAquatico.addActionListener(e -> {
+            new CadastroDeptoAquatico(this);
+        });
+
+
 
         JMenu menuVisualizar = new JMenu("Visualizar");
         JMenuItem listarPessoas = new JMenuItem("Listar Pessoas");

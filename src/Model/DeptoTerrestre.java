@@ -5,7 +5,51 @@ import java.util.Scanner;
 
 public class DeptoTerrestre implements Esportes {
     List<String> esportesTerrestres = new ArrayList<>();
-    // Implementação dos métodos da interface Esportes
+
+    private String nome;
+    private String departamento;
+    private int numeroDeAtletas;
+    private int numeroDeAulasPorSemana;
+
+    public DeptoTerrestre(String nome, String departamento, int numeroDeAtletas, int numeroDeAulasPorSemana) {
+        this.nome = nome;
+        this.departamento = departamento;
+        this.numeroDeAtletas = numeroDeAtletas;
+        this.numeroDeAulasPorSemana = numeroDeAulasPorSemana;
+    }
+
+    public String getNome() {
+        return this.nome;
+    }    
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getDepartamento() {
+        return departamento;
+    }
+
+    public void setDepartamento(String departamento) {
+        this.departamento = departamento;
+    }
+
+    public int getNumeroDeAtletas() {
+        return numeroDeAtletas;
+    }
+
+    public void setNumeroDeAtletas(int numeroDeAtletas) {
+        this.numeroDeAtletas = numeroDeAtletas;
+    }
+
+    public int getNumeroDeAulasPorSemana() {
+        return numeroDeAulasPorSemana;
+    }
+
+    public void setNumeroDeAulasPorSemana(int numeroDeAulasPorSemana) {
+        this.numeroDeAulasPorSemana = numeroDeAulasPorSemana;
+    }
+
     @Override
     public void cadastrarEsporte(String nomeDoEsporte, String modalidade) {
         
@@ -17,6 +61,14 @@ public class DeptoTerrestre implements Esportes {
         esportesTerrestres.add(nomeDoEsporte + " - " + modalidade);
         System.out.println("Esporte terrestre cadastrado: " + nomeDoEsporte + " - " + modalidade);
         scanner.close();
+    }
+
+
+
+    public void removerEsporte(String nomeDoEsporte) {
+        // Lógica para remover um esporte terrestre
+        esportesTerrestres.removeIf(esporte -> esporte.startsWith(nomeDoEsporte + " - "));
+        System.out.println("Esporte terrestre removido: " + nomeDoEsporte);
     }
 
     @Override

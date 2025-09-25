@@ -9,7 +9,7 @@ class CadastroSocio extends JDialog {
 
     public CadastroSocio(JFrame parent) {
         super(parent, "Cadastro de Sócio", true);
-        setSize(300, 200);
+        setSize(500, 400);
         setLayout(new java.awt.GridLayout(4,2));
 
         add(new JLabel("Nome:"));
