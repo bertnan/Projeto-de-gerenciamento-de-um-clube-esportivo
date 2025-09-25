@@ -18,7 +18,7 @@ public class CadastroDeptoAquatico extends JDialog {
         add(nomeField);
 
         add(new JLabel("Departamento:"));
-        deptoField = new JTextField();
+        deptoField = new JTextField();        
         add(deptoField);
 
         add(new JLabel("Número de Atletas:"));
@@ -40,8 +40,14 @@ public class CadastroDeptoAquatico extends JDialog {
                 Integer.parseInt(aulasField.getText())
             );
             CadastroEsportes.adicionar(esporte);
+            if(!deptoField.getText().equals("Aquatico")){
+                JOptionPane.showMessageDialog(this,
+                "Departamento inválido. Somente esportes aquaticos podem ser cadastrados.");
+                dispose();
+                return;
+            }
             JOptionPane.showMessageDialog(this,
-                "Esporte Terrestre cadastrado: " + esporte.getNome());
+                "Esporte Aquatico cadastrado: " + esporte.getNome());
             dispose();
         });
 

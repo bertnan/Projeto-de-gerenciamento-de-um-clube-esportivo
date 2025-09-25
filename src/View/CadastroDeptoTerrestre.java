@@ -39,6 +39,15 @@ public class CadastroDeptoTerrestre extends JDialog {
                 Integer.parseInt(aulasField.getText())
             );
             CadastroEsportes.adicionar(esporte);
+
+            if(!deptoField.getText().equals("Terrestre")){
+                JOptionPane.showMessageDialog(this,
+                "Departamento inválido. Somente esportes terrestres podem ser cadastrados.");
+                dispose();
+                return;
+            }
+
+
             JOptionPane.showMessageDialog(this,
                 "Esporte Terrestre cadastrado: " + esporte.getNome());
             dispose();
