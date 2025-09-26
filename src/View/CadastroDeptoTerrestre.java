@@ -38,7 +38,7 @@ public class CadastroDeptoTerrestre extends JDialog {
                 Integer.parseInt(atletasField.getText()),
                 Integer.parseInt(aulasField.getText())
             );
-            CadastroEsportes.adicionar(esporte);
+            
 
             if(!deptoField.getText().equals("Terrestre")){
                 JOptionPane.showMessageDialog(this,
@@ -46,7 +46,7 @@ public class CadastroDeptoTerrestre extends JDialog {
                 dispose();
                 return;
             }
-
+            CadastroEsportes.adicionarEsporteTerrestre(esporte);
 
             JOptionPane.showMessageDialog(this,
                 "Esporte Terrestre cadastrado: " + esporte.getNome());

@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class DeptoTerrestre implements Esportes {
-    List<String> esportesTerrestres = new ArrayList<>();
+    List<String> modalidades = new ArrayList<>();
 
     private String nome;
     private String departamento;
@@ -58,7 +58,7 @@ public class DeptoTerrestre implements Esportes {
         nomeDoEsporte = scanner.nextLine();
         System.out.println("Informe a modalidade:");
         modalidade = scanner.nextLine();
-        esportesTerrestres.add(nomeDoEsporte + " - " + modalidade);
+        modalidades.add(nomeDoEsporte + " - " + modalidade);
         System.out.println("Esporte terrestre cadastrado: " + nomeDoEsporte + " - " + modalidade);
         scanner.close();
     }
@@ -67,16 +67,18 @@ public class DeptoTerrestre implements Esportes {
 
     public void removerEsporte(String nomeDoEsporte) {
         // Lógica para remover um esporte terrestre
-        esportesTerrestres.removeIf(esporte -> esporte.startsWith(nomeDoEsporte + " - "));
+        modalidades.removeIf(esporte -> esporte.startsWith(nomeDoEsporte + " - "));
         System.out.println("Esporte terrestre removido: " + nomeDoEsporte);
     }
 
     @Override
-    public void listarEsportes() {
+    public void listarModalidades() {
         // Lógica para listar esportes terrestres
-        for (String esporte : esportesTerrestres) {
+        for (String esporte : modalidades) {
             System.out.println(esporte);
         }
     }
+
+
 
 }

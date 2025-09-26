@@ -1,7 +1,15 @@
 package View;
 import javax.swing.*;
 
+import Model.DeptoAquatico;
+import Model.DeptoTerrestre;
+import Model.Esportes;
+
 public class InterfaceGrafica extends JFrame {
+    private DeptoTerrestre deptTerrestres = new DeptoTerrestre("Departamento de Esportes Terrestres", "Terrestre", 0, 0);
+    private DeptoAquatico deptAquaticos = new DeptoAquatico("Departamento de Esportes Aquáticos", "Aquático", 0, 0);
+
+
     public InterfaceGrafica() {
         setTitle("Sistema de Gerenciamento do Clube");
         setSize(900,600);
@@ -24,14 +32,12 @@ public class InterfaceGrafica extends JFrame {
         menuCadastro.add(cadastrarFuncionario);
         menuCadastro.add(cadastrarSocio);
         menuCadastro.add(cadastrarPresidente);
+        menuCadastro.addSeparator();
         menuCadastro.add(cadastrarEsporteTerrestre);
         menuCadastro.add(cadastrarEsporteAquatico);
 
         // Departamentos
-        JMenuItem deptTerrestre = new JMenuItem("Esportes Terrestres");
-        JMenuItem deptAquatico = new JMenuItem("Esportes Aquáticos");
-        menuDepartamentos.add(deptTerrestre);
-        menuDepartamentos.add(deptAquatico);
+
 
         // Operações
         JMenuItem pagarMensalidade = new JMenuItem("Pagar Mensalidade");
@@ -66,13 +72,26 @@ public class InterfaceGrafica extends JFrame {
             new CadastroDeptoAquatico(this);
         });
 
-
-
         JMenu menuVisualizar = new JMenu("Visualizar");
         JMenuItem listarPessoas = new JMenuItem("Listar Pessoas");
         menuVisualizar.add(listarPessoas);
 
         listarPessoas.addActionListener(e -> new TabelaPessoas(this));
+        
+        // opções de listar
+        JMenuItem deptTerrestreList = new JMenuItem("Listar Esportes Terrestres");
+        JMenuItem deptAquaticoList = new JMenuItem("Listar Esportes Aquáticos");
+
+        menuDepartamentos.add(deptTerrestreList);
+
+        menuDepartamentos.add(deptAquaticoList);
+
+        // ações de listar
+        deptTerrestreList.addActionListener(e -> new TabelaEsportes(this, deptTerrestres, "Esportes Terrestres"));
+        deptAquaticoList.addActionListener(e -> new TabelaEsportesAquaticos(this, deptAquaticos, "Esportes Aquáticos"));
+
+        menuBar.add(menuDepartamentos);
+        
 
         menuBar.add(menuVisualizar);
 

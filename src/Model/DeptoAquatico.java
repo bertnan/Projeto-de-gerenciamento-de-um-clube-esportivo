@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class DeptoAquatico implements Esportes {
-    List<String> esportesAquaticos = new ArrayList<>();
+    List<String> modalidades = new ArrayList<>();
     private String nome;
     private String departamento;
     private int numeroDeAtletas;
@@ -51,7 +51,7 @@ public class DeptoAquatico implements Esportes {
 
     public void removerEsporte(String nomeDoEsporte) {
         // Lógica para remover esporte aquático
-        esportesAquaticos.removeIf(esporte -> esporte.startsWith(nomeDoEsporte));
+        modalidades.removeIf(esporte -> esporte.startsWith(nomeDoEsporte));
         System.out.println("Esporte aquático removido: " + nomeDoEsporte);
     }
 
@@ -63,15 +63,15 @@ public class DeptoAquatico implements Esportes {
         nomeDoEsporte = scanner.nextLine();
         System.out.println("Informe a modalidade:");
         modalidade = scanner.nextLine();
-        esportesAquaticos.add(nomeDoEsporte + " - " + modalidade);
+        modalidades.add(nomeDoEsporte + " - " + modalidade);
         System.out.println("Esporte aquático cadastrado: " + nomeDoEsporte + " - " + modalidade);
         scanner.close();
     }
 
     @Override
-    public void listarEsportes() {
+    public void listarModalidades() {
         // Lógica para listar esportes aquáticos
-        for (String esporte : esportesAquaticos) {
+        for (String esporte : modalidades) {
             System.out.println(esporte);
         }
     }
