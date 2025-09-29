@@ -3,7 +3,7 @@ import javax.swing.*;
 
 import Model.DeptoAquatico;
 import Model.DeptoTerrestre;
-import Model.Esportes;
+import Model.convocarReuniao;
 
 public class InterfaceGrafica extends JFrame {
     private DeptoTerrestre deptTerrestres = new DeptoTerrestre("Departamento de Esportes Terrestres", "Terrestre", 0, 0);
@@ -46,6 +46,14 @@ public class InterfaceGrafica extends JFrame {
         menuOperacoes.add(pagarMensalidade);
         menuOperacoes.add(calcularSalario);
         menuOperacoes.add(convocarReuniao);
+
+        pagarMensalidade.addActionListener(e -> {
+            new PagarMensalidade(this);
+        });
+
+        convocarReuniao.addActionListener(e -> {
+            new convocarReuniao(this);
+        });
 
         // Adiciona menus na barra
         menuBar.add(menuCadastro);

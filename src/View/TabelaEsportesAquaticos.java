@@ -2,7 +2,6 @@ package View;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
-import Model.DeptoAquatico;
 import Model.Esportes;
 
 public class TabelaEsportesAquaticos extends JDialog {

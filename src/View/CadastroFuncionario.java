@@ -9,8 +9,8 @@ class CadastroFuncionario extends JDialog {
 
     public CadastroFuncionario(JFrame parent) {
         super(parent, "Cadastro de Funcionário", true);
-        setSize(500, 400);
-        setLayout(new java.awt.GridLayout(5,2));
+        setSize(500, 500);
+        setLayout(new java.awt.GridLayout(10,2));
 
         add(new JLabel("Nome:"));
         nomeField = new JTextField();
